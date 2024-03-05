@@ -1,0 +1,45 @@
+package com.company;
+import java.util.Arrays;
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Vvedite dlinu massiva");
+        int dlina = input.nextInt();
+        System.out.println("Vvedite shirinu massiva");
+        int shirina = input.nextInt();
+        int[][] array = new int[dlina][shirina];
+        System.out.println("Vvedite kajdiy element massiva vruchnuu");
+        for(
+                int i = 0;
+                i<dlina;i++)
+
+        {
+            for (int j = 0; j < shirina; j++) {
+                array[i][j] = input.nextInt();
+            }
+        }
+
+        sortRows(array);
+        System.out.println("Massiv po itogu sortirovki puzir'kom");
+        for (int[] row : array){
+            System.out.println(Arrays.toString(row));
+
+        }
+    }
+    public static void sortRows(int[][] array){
+        for(int i = 0; i < array.length; i++){
+            for (int j = 0; j < array[i].length - 1; j++){
+                for (int k = 0; k < array[i].length - j - 1; k++) {
+                    if (array[i][k] > array[i] [k+ 1]){
+                        int temp = array [i][k];
+                        array[i][k] = array[i] [k + 1];
+                        array[i][k + 1] = temp;
+                    }
+                }
+
+            }
+        }
+    }
+
+}
